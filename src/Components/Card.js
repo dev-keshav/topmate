@@ -13,10 +13,11 @@ import Snackbar from "@mui/material/Snackbar";
 import Slide from "@mui/material/Slide";
 import BasicDateTimePicker from "./Datetime";
 import Rating from "@mui/material/Rating";
+import TextField from '@mui/material/TextField';
 
 const style = {
   position: "absolute",
-  top: "50%",
+  top: "40%",
   left: "50%",
   transform: "translate(-50%, -50%)",
   width: 400,
@@ -62,7 +63,7 @@ export default function BasicCard(props) {
       <Card
         onClick={handleOpen}
         className="card-to-click"
-        sx={{ width: 400, borderRadius: 4, cursor: "pointer" }}
+        sx={{ width: 400, borderRadius: 4, cursor: "pointer", '@media (max-width: 480px)': { width: '90vw' } }}
       >
         <CardContent sx={{ paddingBottom: "40px" }}>
           <Typography
@@ -134,9 +135,11 @@ export default function BasicCard(props) {
         aria-labelledby="parent-modal-title"
         aria-describedby="parent-modal-description"
       >
-        <Box sx={{ ...style, width: 700 }}>
+        <Box sx={{ ...style, width: 700, '@media (max-width: 480px)': { width: 270 } }}>
           <h2 id="parent-modal-title">{props.name}</h2>
           <p id="parent-modal-description">{props.modalPara}</p>
+          <TextField id="outlined-basic" label="Name" variant="outlined" />          
+          <TextField sx={{ marginLeft: '40px', '@media(max-width: 480px)': {marginLeft: '0', marginTop: '10px'}}} id="outlined-basic" label="Email" variant="outlined" />          
           <BasicDateTimePicker />
           <Button
             onClick={handleClickPopup(TransitionRight)}

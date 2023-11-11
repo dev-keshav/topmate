@@ -6,7 +6,7 @@ const mystyle = {
   width: "28vw",
   height: "100vh",
   backgroundColor: "#4DD5CD",
-  display: "flex",
+  // display: "flex",
   flexDirection: "column",
   alignItems: "center",
   justifyContent: "center",
@@ -32,7 +32,7 @@ const twoCards = {
 
 const Sidebar = () => {
   return (
-    <div style={mystyle}>
+    <div className="sidebar_inner" style={mystyle}>
       <Stack>
         <Avatar
           alt="Remy Sharp"
