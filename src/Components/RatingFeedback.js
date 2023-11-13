@@ -76,7 +76,7 @@ export default function BasicCard() {
         </Card>
       </div>
       <Stack direction='row' useFlexGap flexWrap="wrap" className="text_feedbacks">
-        <Card className="rating_div" sx={{ display: 'flex', flexDirection: 'column', borderRadius: "20px", width: 405, '@media(max-width: 480px)': {width: 300} }}>
+        <Card className="rating_div" sx={{ marginTop: '50px', backgroundColor: '#FDFBF9', display: 'flex', flexDirection: 'column', borderRadius: "20px", width: 405, '@media(max-width: 480px)': {width: 300} }}>
           <CardContent sx={{ margin: "20px" }}>
             <Typography variant="p">
               It was an informative,interactive and insightful session. Got all
@@ -90,7 +90,7 @@ export default function BasicCard() {
           </CardActions>
         </Card>
 
-        <Card className="rating_div" sx={{ display: 'flex', flexDirection: 'column', borderRadius: "20px", width: 405, '@media(max-width: 480px)': {width: 300} }}>
+        <Card className="rating_div" sx={{ marginTop: '50px', backgroundColor: '#FDFBF9', display: 'flex', flexDirection: 'column', borderRadius: "20px", width: 405, '@media(max-width: 480px)': {width: 300} }}>
           <CardContent sx={{ margin: "20px" }}>
             <Typography variant="p">
             Quick and detailed response.            </Typography>
@@ -101,7 +101,7 @@ export default function BasicCard() {
           </CardActions>
         </Card>
 
-        <Card className="rating_div" sx={{ display: 'flex', flexDirection: 'column', borderRadius: "20px", width: 405, '@media(max-width: 480px)': {width: 300} }}>
+        <Card className="rating_div" sx={{ marginTop: '50px', backgroundColor: '#FDFBF9', display: 'flex', flexDirection: 'column', borderRadius: "20px", width: 405, '@media(max-width: 480px)': {width: 300} }}>
           <CardContent sx={{ margin: "20px" }}>
             <Typography variant="p">
             I had a highly engaging experience and felt quite positive. Everything was explained to me clearly.
@@ -113,7 +113,7 @@ export default function BasicCard() {
           </CardActions>
         </Card>
 
-        <Card className="rating_div" sx={{ display: 'flex', flexDirection: 'column', borderRadius: "20px", width: 405, '@media(max-width: 480px)': {width: 300} }}>
+        <Card className="rating_div" sx={{ marginTop: '50px', backgroundColor: '#FDFBF9', display: 'flex', flexDirection: 'column', borderRadius: "20px", width: 405, '@media(max-width: 480px)': {width: 300} }}>
           <CardContent sx={{ margin: "20px" }}>
             <Typography variant="p">
             Its was the bestest interaction i had in a while            </Typography>
@@ -124,10 +124,10 @@ export default function BasicCard() {
           </CardActions>
         </Card>
 
-        <Card className="rating_div" sx={{ display: 'flex', flexDirection: 'column', borderRadius: "20px", width: 405, '@media(max-width: 480px)': {width: 300} }}>
+        <Card className="rating_div" sx={{ marginTop: '50px', backgroundColor: '#FDFBF9', display: 'flex', flexDirection: 'column', borderRadius: "20px", width: 405, '@media(max-width: 480px)': {width: 300} }}>
           <CardContent sx={{ margin: "20px" }}>
             <Typography variant="p">
-            It was great taking him. One of the best person I took guidance from. Thank you so much for your mentorship. I will highly recommend it.            </Typography>
+            It was great taking him. One of the best person I took guidance from. Thank you so much for your mentorship. I will highly recommend it.</Typography>
           </CardContent>
           <CardActions>
           <Typography sx={{ paddingLeft: '20px', color: 'gray'}} variant="h6">- Aman kumar

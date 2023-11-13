@@ -59,12 +59,20 @@ export default function BasicCard(props) {
     setOpenPopup(false);
   };
 
+  // Handling the date-time picker
+  const [selectedDate, setSelectedDate] = useState(new Date());
+  const handleDateChange = (date) => {
+    setUserData((prevData) => ({ ...prevData, time: date }));
+  };
+
+
   // Firebase database
   const [userData, setUserData] = useState({
     name: props.name,
     username: "",
     email: "",
     time: "",
+    message: "",
   });
 
   useEffect(() => {
@@ -81,7 +89,7 @@ export default function BasicCard(props) {
   // connect to realtime database
   const submitData = async (event) => {
     event.preventDefault();
-    const { name, username, email } = userData;
+    const { name, username, email, message, time } = userData;
     const res = await fetch(
       "https://topmate-536ad-default-rtdb.firebaseio.com/userdata-record.json",
       {
@@ -89,16 +97,47 @@ export default function BasicCard(props) {
         headers: {
           "Content-Type": "application/json",
         },
-        body:JSON.stringify({
-          name, username, email
-        })
+        body: JSON.stringify({
+          name,
+          username,
+          email,
+          message,
+          time,
+        }),
       }
     );
-    if(res){
+    if (res) {
       handleClickPopup(TransitionRight)();
       handleClose();
     }
   };
+
+  // check it is Priority DM or 1:1 Call
+  let mess;
+  if (props.title === "Priority DM") {
+    mess = (
+      <TextField
+        sx={{ marginTop: 2 }}
+        id={props.id}
+        name="message"
+        label="Message"
+        variant="outlined"
+        value={userData.message}
+        onChange={userDetails}
+      />
+    );
+  } else {
+    mess = (
+      <BasicDateTimePicker
+        label="DateTime"
+        value={selectedDate}
+        onChange={(date) => {
+          setSelectedDate(date);
+          handleDateChange(date); // Call the parent's function to update the date
+        }}
+      />
+    );
+  }
 
   return (
     <>
@@ -215,10 +254,10 @@ export default function BasicCard(props) {
             value={userData.email}
             onChange={userDetails}
           />
-          <BasicDateTimePicker />
+          {/* This will add message box or datatimer  */}
+          {mess}
+          <br />
           <Button
-            // onClick={handleClickPopup(TransitionRight)}
-            // onClick={submitData}
             onClick={(e) => {
               submitData(e);
             }}
