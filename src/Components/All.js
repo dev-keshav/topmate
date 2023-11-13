@@ -43,6 +43,7 @@ function All() {
 
       <Stack>
         <BasicCard
+          id="1"
           title="1:1 Call"
           name="Career guidance"
           time="30 min meeting"
@@ -55,6 +56,7 @@ function All() {
 
       <Stack>
         <BasicCard
+          id="2"
           title="1:1 Call"
           name="Quick Chat"
           time="30 min meeting"
@@ -67,6 +69,7 @@ function All() {
 
       <Stack>
         <BasicCard
+          id="3"
           title="1:1 Call"
           name="Interview prep & tips"
           time="30 min meeting"
@@ -79,6 +82,7 @@ function All() {
 
       <Stack>
         <BasicCard
+          id="4"
           title="Priority DM"
           name="Ask me anything"
           time="replies in 2 days"
@@ -91,6 +95,7 @@ function All() {
 
       <Stack>
         <BasicCard
+          id="5"
           title="Priority DM"
           name="Priority DM"
           time="replies in 2 days"
@@ -103,6 +108,7 @@ function All() {
 
       <Stack>
         <BasicCard
+          id="6"
           title="Priority DM"
           name="Have a question?"
           time="replies in 2 days"

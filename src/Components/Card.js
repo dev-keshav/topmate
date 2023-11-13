@@ -13,7 +13,8 @@ import Snackbar from "@mui/material/Snackbar";
 import Slide from "@mui/material/Slide";
 import BasicDateTimePicker from "./Datetime";
 import Rating from "@mui/material/Rating";
-import TextField from '@mui/material/TextField';
+import TextField from "@mui/material/TextField";
+import { useState, useEffect } from "react";
 
 const style = {
   position: "absolute",
@@ -58,12 +59,58 @@ export default function BasicCard(props) {
     setOpenPopup(false);
   };
 
+  // Firebase database
+  const [userData, setUserData] = useState({
+    name: props.name,
+    username: "",
+    email: "",
+    time: "",
+  });
+
+  useEffect(() => {
+    setUserData((prevData) => ({ ...prevData, name: props.name }));
+  }, [props.name]);
+
+  let name, value;
+  const userDetails = (event) => {
+    name = event.target.name;
+    value = event.target.value;
+    setUserData({ ...userData, [name]: value });
+  };
+
+  // connect to realtime database
+  const submitData = async (event) => {
+    event.preventDefault();
+    const { name, username, email } = userData;
+    const res = await fetch(
+      "https://topmate-536ad-default-rtdb.firebaseio.com/userdata-record.json",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body:JSON.stringify({
+          name, username, email
+        })
+      }
+    );
+    if(res){
+      handleClickPopup(TransitionRight)();
+      handleClose();
+    }
+  };
+
   return (
     <>
       <Card
         onClick={handleOpen}
         className="card-to-click"
-        sx={{ width: 400, borderRadius: 4, cursor: "pointer", '@media (max-width: 480px)': { width: '90vw' } }}
+        sx={{
+          width: 400,
+          borderRadius: 4,
+          cursor: "pointer",
+          "@media (max-width: 480px)": { width: "90vw" },
+        }}
       >
         <CardContent sx={{ paddingBottom: "40px" }}>
           <Typography
@@ -129,20 +176,52 @@ export default function BasicCard(props) {
         </CardActions>
       </Card>
 
+      {/* User Date input modal          */}
       <Modal
         open={open}
         onClose={handleClose}
         aria-labelledby="parent-modal-title"
         aria-describedby="parent-modal-description"
       >
-        <Box sx={{ ...style, width: 700, '@media (max-width: 480px)': { width: 270 } }}>
+        <Box
+          sx={{
+            ...style,
+            width: 700,
+            "@media (max-width: 480px)": { width: 270 },
+          }}
+        >
           <h2 id="parent-modal-title">{props.name}</h2>
           <p id="parent-modal-description">{props.modalPara}</p>
-          <TextField id="outlined-basic" label="Name" variant="outlined" />          
-          <TextField sx={{ marginLeft: '40px', '@media(max-width: 480px)': {marginLeft: '0', marginTop: '10px'}}} id="outlined-basic" label="Email" variant="outlined" />          
+          <TextField
+            id={props.id}
+            name="username"
+            label="Name"
+            variant="outlined"
+            value={userData.username}
+            onChange={userDetails}
+          />
+          <TextField
+            sx={{
+              marginLeft: "40px",
+              "@media(max-width: 480px)": {
+                marginLeft: "0",
+                marginTop: "10px",
+              },
+            }}
+            id={props.id}
+            name="email"
+            label="Email"
+            variant="outlined"
+            value={userData.email}
+            onChange={userDetails}
+          />
           <BasicDateTimePicker />
           <Button
-            onClick={handleClickPopup(TransitionRight)}
+            // onClick={handleClickPopup(TransitionRight)}
+            // onClick={submitData}
+            onClick={(e) => {
+              submitData(e);
+            }}
             sx={{
               backgroundColor: "black",
               color: "white",
