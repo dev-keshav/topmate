@@ -8,6 +8,14 @@ import CardActions from "@mui/material/CardActions";
 import { Stack } from "@mui/material";
 
 export default function BasicCard() {
+  const [feedbackData, setfeedbackData] = React.useState([]);
+
+  React.useEffect(() => {
+    fetch("http://localhost:3001/v1/api/feedbackData")
+    .then((response) => response.json())
+    .then((data) => setfeedbackData(data))
+    .catch((error) => console.error("Error fetching data:", error))
+  }, [])
   return (
     <div className="ratingFeedback_div">
       <h1>Ratings and feedbacks</h1>
@@ -79,13 +87,11 @@ export default function BasicCard() {
         <Card className="rating_div" sx={{ marginTop: '50px', backgroundColor: '#FDFBF9', display: 'flex', flexDirection: 'column', borderRadius: "20px", width: 405, '@media(max-width: 480px)': {width: 300} }}>
           <CardContent sx={{ margin: "20px" }}>
             <Typography variant="p">
-              It was an informative,interactive and insightful session. Got all
-              my doubts cleared and also got the path forward to be followed.
-              Thank You once again!
+            {feedbackData[0]?.feedback || "No feedback"}
             </Typography>
           </CardContent>
           <CardActions>
-          <Typography sx={{ paddingLeft: '20px', color: 'gray'}} variant="h6">- Neeraj Kumar
+          <Typography sx={{ paddingLeft: '20px', color: 'gray'}} variant="h6">- {feedbackData[0]?.name || "Hello"}
             </Typography>
           </CardActions>
         </Card>
@@ -93,10 +99,11 @@ export default function BasicCard() {
         <Card className="rating_div" sx={{ marginTop: '50px', backgroundColor: '#FDFBF9', display: 'flex', flexDirection: 'column', borderRadius: "20px", width: 405, '@media(max-width: 480px)': {width: 300} }}>
           <CardContent sx={{ margin: "20px" }}>
             <Typography variant="p">
-            Quick and detailed response.            </Typography>
+            {feedbackData[1]?.feedback || "No feedback"}
+            </Typography>
           </CardContent>
           <CardActions>
-          <Typography sx={{ paddingLeft: '20px', color: 'gray'}} variant="h6">- Prem Kothawle
+          <Typography sx={{ paddingLeft: '20px', color: 'gray'}} variant="h6">- {feedbackData[1]?.name || "Hello"}
             </Typography>
           </CardActions>
         </Card>
@@ -104,22 +111,11 @@ export default function BasicCard() {
         <Card className="rating_div" sx={{ marginTop: '50px', backgroundColor: '#FDFBF9', display: 'flex', flexDirection: 'column', borderRadius: "20px", width: 405, '@media(max-width: 480px)': {width: 300} }}>
           <CardContent sx={{ margin: "20px" }}>
             <Typography variant="p">
-            I had a highly engaging experience and felt quite positive. Everything was explained to me clearly.
+            {feedbackData[2]?.feedback || "No feedback"}
             </Typography>
           </CardContent>
           <CardActions>
-          <Typography sx={{ paddingLeft: '20px', color: 'gray'}} variant="h6">- Vikneshwaran CR
-            </Typography>
-          </CardActions>
-        </Card>
-
-        <Card className="rating_div" sx={{ marginTop: '50px', backgroundColor: '#FDFBF9', display: 'flex', flexDirection: 'column', borderRadius: "20px", width: 405, '@media(max-width: 480px)': {width: 300} }}>
-          <CardContent sx={{ margin: "20px" }}>
-            <Typography variant="p">
-            Its was the bestest interaction i had in a while            </Typography>
-          </CardContent>
-          <CardActions>
-          <Typography sx={{ paddingLeft: '20px', color: 'gray'}} variant="h6">- Navin
+          <Typography sx={{ paddingLeft: '20px', color: 'gray'}} variant="h6">- {feedbackData[2]?.name || "Hello"}
             </Typography>
           </CardActions>
         </Card>
@@ -127,10 +123,23 @@ export default function BasicCard() {
         <Card className="rating_div" sx={{ marginTop: '50px', backgroundColor: '#FDFBF9', display: 'flex', flexDirection: 'column', borderRadius: "20px", width: 405, '@media(max-width: 480px)': {width: 300} }}>
           <CardContent sx={{ margin: "20px" }}>
             <Typography variant="p">
-            It was great taking him. One of the best person I took guidance from. Thank you so much for your mentorship. I will highly recommend it.</Typography>
+            {feedbackData[3]?.feedback || "No feedback"}
+            </Typography>
           </CardContent>
           <CardActions>
-          <Typography sx={{ paddingLeft: '20px', color: 'gray'}} variant="h6">- Aman kumar
+          <Typography sx={{ paddingLeft: '20px', color: 'gray'}} variant="h6">- {feedbackData[3]?.name || "Hello"}
+            </Typography>
+          </CardActions>
+        </Card>
+
+        <Card className="rating_div" sx={{ marginTop: '50px', backgroundColor: '#FDFBF9', display: 'flex', flexDirection: 'column', borderRadius: "20px", width: 405, '@media(max-width: 480px)': {width: 300} }}>
+          <CardContent sx={{ margin: "20px" }}>
+            <Typography variant="p">
+            {feedbackData[4]?.feedback || "No feedback"}
+            </Typography>
+          </CardContent>
+          <CardActions>
+          <Typography sx={{ paddingLeft: '20px', color: 'gray'}} variant="h6">- {feedbackData[4]?.name || "Hello"}
             </Typography>
           </CardActions>
         </Card>
