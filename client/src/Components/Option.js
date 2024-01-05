@@ -29,7 +29,7 @@ const Option = () => {
             textTransform: "inherit",
           }}
           component={Link}
-          to="/"
+          to="/dev-keshav"
         >
           All
         </Button>
@@ -51,7 +51,7 @@ const Option = () => {
             textTransform: "inherit",
           }}
           component={Link}
-          to="/onecall"
+          to="/dev-keshav/onecall"
         >
           1:1 Call
         </Button>
@@ -73,7 +73,7 @@ const Option = () => {
             textTransform: "inherit",
           }}
           component={Link}
-          to="/prioritydm"
+          to="/dev-keshav/prioritydm"
         >
           Priority
         </Button>
