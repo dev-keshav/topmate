@@ -6,7 +6,7 @@ const Page404 = () => {
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
-    height: "100vh", // Optional: Set a height for vertical centering
+    height: "80vh",
   };
 
   return (

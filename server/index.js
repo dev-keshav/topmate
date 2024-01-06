@@ -28,8 +28,38 @@ app.use('/v1/api/feedbackData', (req, res) => {
 })
 
 app.get('*', (req, res) => {
-  res.send(`<h2> Le API response..</h2> <img height=222 width=222 src="https://memeheist.com/wp-content/uploads/2023/08/Hum-Pe-To-Hai-Hi-No-Meme-1-1024x1024.jpg" />`);    
-})
+  const htmlContent = `
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Centered Content</title>
+      <style>
+        body {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 80vh;
+          margin: 0;
+        }
+
+        .center-content {
+          text-align: center;
+        }
+      </style>
+    </head>
+    <body>
+      <div class="center-content">
+        <h2>Le API response..</h2>
+        <img height="222" width="222" src="https://memeheist.com/wp-content/uploads/2023/08/Hum-Pe-To-Hai-Hi-No-Meme-1-1024x1024.jpg" alt="Meme">
+      </div>
+    </body>
+    </html>
+  `;
+
+  res.send(htmlContent);
+});
 
 app.use('/', (req, res) => {
   res.send('Hello, World!');
