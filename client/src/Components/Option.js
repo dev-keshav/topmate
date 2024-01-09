@@ -9,6 +9,8 @@ const Option = () => {
     setActive(buttonName);
   };
 
+  // console.log(handleClick)
+
   return (
     <div>
       <Stack direction="row" spacing={2}>

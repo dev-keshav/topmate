@@ -12,47 +12,27 @@ import AboutMe from "./Components/AboutMe";
 import RatingFeedback from "./Components/RatingFeedback";
 import Firstpage from "./Pages/Firstpage";
 import Page404 from "./Pages/Page404";
+import DevKeshav from "./Pages/DevKeshav";
+import OneCallPage from "./Pages/OneCallPage";
+import PriorityDmPage from "./Pages/PriorityDmPage";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Firstpage />} />
-        <Route
-          path="/dev-keshav"
-          element={
-            <Stack direction="row" spacing={0}>
-              <Stack className="side_bar_large">
-                <Sidebar />
-              </Stack>
-              <Stack className="side_bar_small">
-                <SidebarSmall />
-              </Stack>
-              <Stack className="main_cont" spacing={4}>
-                <Stack className="option_div">
-                  <Option />
-                </Stack>
-                <Stack className="content_div">
-                  <Routes>
-                    <Route path="/" element={<All />} />
-                    <Route path="onecall" element={<OneCall />} />
-                    <Route path="prioritydm" element={<Priority />} />
-                    <Route path="modal" element={<NestedModal />} />
-                  </Routes>
-                  <Stack>
-                    <RatingFeedback />
-                  </Stack>
-                  <Stack className="about">
-                    <AboutMe />
-                  </Stack>
-                </Stack>
-              </Stack>
-            </Stack>
-          }
-        />
-        <Route path="*" element={<Page404 />} />
-      </Routes>
-    </BrowserRouter>
+    <>
+      <BrowserRouter>
+              <Routes>
+                <Route path="/" element={<Firstpage />} />
+                <Route path="/dev-keshav" element={<DevKeshav />} />
+                <Route path="/dev-keshav/onecall" element={<OneCallPage />} />
+                <Route path="/dev-keshav/prioritydm" element={<PriorityDmPage />} />
+                <Route path="/dev-keshav/modal" element={<NestedModal />} />
+                <Route path="*" element={<Page404 />} />
+              </Routes>
+            
+          
+        
+      </BrowserRouter>
+    </>
   );
 }
 
