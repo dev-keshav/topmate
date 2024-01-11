@@ -28,9 +28,6 @@ function App() {
                 <Route path="/dev-keshav/modal" element={<NestedModal />} />
                 <Route path="*" element={<Page404 />} />
               </Routes>
-            
-          
-        
       </BrowserRouter>
     </>
   );

@@ -7,6 +7,8 @@ import { styled } from "@mui/material/styles";
 import { Typography } from "@mui/material";
 import QuoteImage from "../img/quote.png";
 import PipCImage from "../img/pipC.png";
+import CourseBox from "../Components/CourseBox";
+import CourseList from "../Components/CourseList";
 
 const landingPageStyle = {
   display: "flex",
@@ -86,6 +88,7 @@ const LandingPage = () => {
   const [isHovered, setIsHovered] = useState(false);
   const [isSecHovered, setIsSecHovered] = useState(false);
 
+
   return (
     <div>
       <div style={landingPageStyle}>
@@ -115,7 +118,7 @@ const LandingPage = () => {
               >
                 Unlock the World of Coding Excellence:{" "}
               </span>
-              <spin
+              <span
                 style={{
                   fontSize: "25px",
                   fontFamily: "Cedarville Cursive",
@@ -125,7 +128,7 @@ const LandingPage = () => {
                 }}
               >
                 Learn, Build, and Master Programming
-              </spin>{" "}
+              </span>
             </p>
           </section>
         </div>
@@ -192,6 +195,9 @@ const LandingPage = () => {
       <div>
         <SimpleContainer />
       </div>
+      <Stack sx={{ paddingX: '25vw', paddingY: '20vh'}}>
+        <CourseList />
+      </Stack>
       <footer style={footerStyle}>
         <p>&copy; 2023 My Coding Website. All rights reserved.</p>
       </footer>
