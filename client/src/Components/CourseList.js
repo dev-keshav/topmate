@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import CourseBox from "./CourseBox";
-import { Stack, Typography } from "@mui/material";
+import { Stack, Typography, Button, Skeleton } from "@mui/material";
 
 function CourseList() {
   const [courseData, setCourseData] = useState([]);
+  const [displayedItems, setDisplayedItems] = useState(6); // Show 6 items initially
+  const [showMoreButton, setShowMoreButton] = useState(true);
 
   useEffect(() => {
     // Fetch data from the API and update the state
@@ -15,6 +17,20 @@ function CourseList() {
       })
       .catch((error) => console.error("Error fetching data:", error));
   }, []);
+
+  const handleShowMore = () => {
+    // Set displayedItems to the total number of items to show all
+    setDisplayedItems(courseData.length);
+    // Remove the "Show More" button
+    setShowMoreButton(false);
+  };
+
+  const handleShowLess = () => {
+    // Reset displayedItems to 6 to show less
+    setDisplayedItems(6);
+    // Display the "Show More" button
+    setShowMoreButton(true);
+  };
 
   return (
     <>
@@ -33,7 +49,7 @@ function CourseList() {
       </Typography>
       <Stack direction="row" spacing={10} useFlexGap flexWrap="wrap">
         {courseData.length > 0 ? (
-          courseData.map((card) => (
+          courseData.slice(0, displayedItems).map((card) => (
             <Stack key={card.id}>
               <CourseBox
                 title={card.title}
@@ -44,9 +60,40 @@ function CourseList() {
             </Stack>
           ))
         ) : (
-          <p>Loading...</p>
+          <p>Loading...
+            <Skeleton variant="text" sx={{ fontSize: '1rem', width: '50vw', height: '20vh' }} />
+            <Skeleton variant="circular" sx={{ width: '10vw', height: '20vh' }} />
+            <Skeleton
+              sx={{ width: '50vw', height: '20vh'  }}
+              variant="rounded"
+            />
+          </p>
         )}
       </Stack>
+      {courseData.length > 6 && showMoreButton && (
+        <Stack direction="row" justifyContent="center" mt={12} >
+          <Button
+            onClick={handleShowMore}
+            variant="contained"
+            color="primary"
+            sx={{ backgroundColor: "#000000", color: "#ffffff" }} // Black button style
+          >
+            Show More
+          </Button>
+        </Stack>
+      )}
+      {displayedItems > 6 && (
+        <Stack direction="row" justifyContent="center" mt={12}>
+          <Button
+            onClick={handleShowLess}
+            variant="outlined"
+            color="secondary"
+            sx={{ backgroundColor: "#ffffff", color: "#000000" }} // Black button style
+          >
+            Show Less
+          </Button>
+        </Stack>
+      )}
     </>
   );
 }

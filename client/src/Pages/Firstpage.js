@@ -7,8 +7,8 @@ import { styled } from "@mui/material/styles";
 import { Typography } from "@mui/material";
 import QuoteImage from "../img/quote.png";
 import PipCImage from "../img/pipC.png";
-import CourseBox from "../Components/CourseBox";
 import CourseList from "../Components/CourseList";
+import './pages.css'
 
 const landingPageStyle = {
   display: "flex",
@@ -47,16 +47,16 @@ const buttonStyle = {
   transition: "background-color 0.3s ease",
 };
 
-const sectionContainerStyle = {
-  display: "flex",
-  justifyContent: "space-between",
-  width: "80%",
-  marginTop: "-130px",
-  zIndex: "3",
-  marginLeft: "120px",
-  boxShadow: "0px 0px 500px rgba(0, 0, 0, 0.5)",
-  backgroundColor: "#F7F7F7",
-};
+// const sectionContainerStyle = {
+//   display: "flex",
+//   justifyContent: "space-between",
+//   width: "80%",
+//   marginTop: "-130px",
+//   zIndex: "3",
+//   marginLeft: "120px",
+//   boxShadow: "0px 0px 500px rgba(0, 0, 0, 0.5)",
+//   backgroundColor: "#F7F7F7",
+// };
 
 const imgStyle = {
   width: "70%",
@@ -83,10 +83,13 @@ const footerStyle = {
   color: "#fff",
 };
 
+
+
 const LandingPage = () => {
 
   const [isHovered, setIsHovered] = useState(false);
   const [isSecHovered, setIsSecHovered] = useState(false);
+
 
 
   return (
@@ -133,7 +136,7 @@ const LandingPage = () => {
           </section>
         </div>
       </div>
-      <div style={sectionContainerStyle}>
+      <div className="sectionContainerStyle">
         <div style={sectionStyle}>
           <Stack direction="row" spacing={2}>
             <DemoPaper variant="">
@@ -195,7 +198,7 @@ const LandingPage = () => {
       <div>
         <SimpleContainer />
       </div>
-      <Stack sx={{ paddingX: '25vw', paddingY: '20vh'}}>
+      <Stack className="courseList_div">
         <CourseList />
       </Stack>
       <footer style={footerStyle}>
