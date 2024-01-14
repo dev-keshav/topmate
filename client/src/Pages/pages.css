@@ -13,7 +13,7 @@
 }
 @media screen and (max-width: 600px){
     .courseList_div{
-        padding: 20vh 15vw;
+        padding: 20vh 10vw;
     }
     .sectionContainerStyle{
         display: none;

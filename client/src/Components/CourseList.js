@@ -8,7 +8,6 @@ function CourseList() {
   const [showMoreButton, setShowMoreButton] = useState(true);
 
   useEffect(() => {
-    // Fetch data from the API and update the state
     fetch("http://localhost:3001/v1/api/contentBoxData")
       .then((response) => response.json())
       .then((data) => {
@@ -19,16 +18,12 @@ function CourseList() {
   }, []);
 
   const handleShowMore = () => {
-    // Set displayedItems to the total number of items to show all
     setDisplayedItems(courseData.length);
-    // Remove the "Show More" button
     setShowMoreButton(false);
   };
 
   const handleShowLess = () => {
-    // Reset displayedItems to 6 to show less
     setDisplayedItems(6);
-    // Display the "Show More" button
     setShowMoreButton(true);
   };
 
@@ -76,7 +71,7 @@ function CourseList() {
             onClick={handleShowMore}
             variant="contained"
             color="primary"
-            sx={{ backgroundColor: "#000000", color: "#ffffff" }} // Black button style
+            sx={{ backgroundColor: "#000000", color: "#ffffff", textTransform: 'none' }} // Black button style
           >
             Show More
           </Button>
@@ -88,7 +83,7 @@ function CourseList() {
             onClick={handleShowLess}
             variant="outlined"
             color="secondary"
-            sx={{ backgroundColor: "#ffffff", color: "#000000" }} // Black button style
+            sx={{ backgroundColor: "#ffffff", color: "#000000", textTransform: 'none' }} // Black button style
           >
             Show Less
           </Button>

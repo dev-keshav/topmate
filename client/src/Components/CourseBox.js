@@ -1,5 +1,4 @@
 import * as React from "react";
-import { useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
@@ -8,12 +7,7 @@ import Typography from "@mui/material/Typography";
 import { CardActions, Rating } from "@mui/material";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 
-
-
-
-
 export default function CourseBox({ title, name, rating, imgUrl }) {
-  const theme = useTheme();
   const [isHovered, setIsHovered] = React.useState(false)
 
   const styleBox = {

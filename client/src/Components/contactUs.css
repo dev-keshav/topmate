@@ -1,0 +1,101 @@
+.contact-form-container {
+  background-color: #4bd0c8;
+  padding: 20px;
+  width: 80vw;
+  margin: auto;
+  margin-bottom: 120px;
+  box-shadow: 0 0 90px rgba(0, 0, 0, 0.5);
+  height: 70vh;
+  margin-top: 120px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  color: #ffffff;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input,
+textarea {
+  padding: 8px;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.contact-left{
+    display: flex;
+    flex-direction: column;
+    padding-left: 5vw;
+}
+.contact-right{
+    margin-right: 100px;
+    margin-top: 20px;
+}
+
+.form-btn {
+  background-color: black;
+  color: #4bd0c8;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 40px;
+  width: 20vw;
+}
+.form-left-para{
+    font-family: "Cursive"
+}
+
+.form-btn:hover {
+  background-color: #2d2b2bcc;
+}
+
+.contact-form-container {
+  display: flex;
+  justify-content: space-between;
+}
+.contact-text-field{
+    width: 20vw;
+    color: #4BD0C8;
+    margin-right: 10vw;
+}
+.call-icon-div, .mail-icon-div{
+    display: flex;
+}
+.mail-icon-div{
+    margin-top: -25px;
+}
+.call-icon-div p, .mail-icon-div p {
+    cursor: pointer;
+    font-family: "Cursive";
+    font-weight: 900;
+}
+.call-icon-div p:hover, .mail-icon-div p:hover{
+    color: white;
+}
+
+
+@media (max-width: 480px){
+    .contact-left{
+        display: none;
+    }
+    .contact-right{
+        margin-left: 8vw;
+    }
+    .contact-text-field{
+        width: 50vw;
+    }
+    .form-btn{
+        width: 40vw;
+    }
+}
