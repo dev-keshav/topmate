@@ -3,6 +3,7 @@ const cors = require('cors');
 const basicCardData = require('./database/basicCards');
 const { profileData, profileListData } = require('./database/Profile');
 const ratingFeedbackData = require('./database/RatingFeedback');
+const ContentBoxData = require('./database/ContentBox');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
@@ -25,7 +26,12 @@ app.use('/v1/api/profileListData', (req, res) => {
 
 app.use('/v1/api/feedbackData', (req, res) => {
   res.json(ratingFeedbackData)
-})
+});
+
+app.use('/v1/api/contentBoxData', (req, res) => {
+  res.json(ContentBoxData);
+  res.send(ContentBoxData)
+});
 
 app.get('*', (req, res) => {
   const htmlContent = `

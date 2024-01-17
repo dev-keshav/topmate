@@ -9,7 +9,9 @@ function All() {
     // Fetch data from the API endpoint
     fetch("http://localhost:3001/v1/api/basicCards")
       .then((response) => response.json())
-      .then((data) => setBasicCardData(data))
+      .then((data) => {
+        // console.log(data)
+        setBasicCardData(data)})
       .catch((error) => console.error("Error fetching data:", error));
   }, []); // The empty dependency array ensures that the effect runs once after the initial render
 

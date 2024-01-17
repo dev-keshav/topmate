@@ -1,0 +1,32 @@
+.courseList_div{
+    padding: 20vh 25vw;
+}
+.sectionContainerStyle{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin-top: -130px;
+    z-index: 3;
+    margin-left: 120px;
+    box-shadow: 0px 0px 500px rgba(0, 0, 0, 0.5);
+    background-color: #F7F7F7;
+}
+.firstpage_pipClogo{
+    width: 20vw;
+    height: 40vh;
+    transform: rotate(10deg);
+}
+@media screen and (max-width: 600px){
+    .courseList_div{
+        padding: 20vh 10vw;
+    }
+    .sectionContainerStyle{
+        display: none;
+    }
+    .firstpage_pipClogo{
+        width: 25vw;
+        height: 20vh;
+        margin-top: 50px;
+        margin-left: -20px;
+    }
+}

@@ -1,6 +1,8 @@
 import { Avatar, Stack, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import pic from '../Photo/new-file.png'
+import PipCImg from "../img/pipC.png";
+
 
 const mystyle = {
   width: "100vw",
@@ -23,11 +25,21 @@ const Sidebar = () => {
   }, [])
   return (
     <div className="sidebar_inner_small" style={mystyle}>
-      <Stack>
+      <Stack sx={{ display: "flex", flexDirection: "row" }}>
+      <img
+          style={{
+            width: '15vw',
+            height: '10vh',
+            transform: "rotate(10deg)",
+            marginLeft: '5px'
+          }}
+          alt=""
+          src={PipCImg}
+        />
         <Avatar
           alt="Remy Sharp"
           src={pic}
-          sx={{ marginLeft: '30px', width: '80px', height: '80px' }}
+          sx={{ marginLeft: '10px', width: '80px', height: '80px' }}
         />
       </Stack>
       <Typography variant="p" component="div" ml={'12px'} sx={{ fontWeight: '600', fontFamily: 'Exo' }} >

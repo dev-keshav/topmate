@@ -1,6 +1,6 @@
 .card-to-click:hover {
   transition: .5s;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Add a shadow */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
 .side_bar_large{
@@ -104,4 +104,8 @@
     justify-content: center;
     margin-top: 0;
   }
+}
+::selection{
+  color: gray;
+  background: yellow;
 }

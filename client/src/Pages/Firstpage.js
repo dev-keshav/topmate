@@ -7,6 +7,9 @@ import { styled } from "@mui/material/styles";
 import { Typography } from "@mui/material";
 import QuoteImage from "../img/quote.png";
 import PipCImage from "../img/pipC.png";
+import CourseList from "../Components/CourseList";
+import './pages.css'
+import ContactUs from "../Components/ContactUs";
 
 const landingPageStyle = {
   display: "flex",
@@ -34,27 +37,6 @@ const headerStyle = {
   transform: "rotate(-5deg)",
 };
 
-const buttonStyle = {
-  backgroundColor: "#fff",
-  color: "#673EE6",
-  padding: "10px 20px",
-  fontSize: "16px",
-  border: "none",
-  cursor: "pointer",
-  textDecoration: "none",
-  transition: "background-color 0.3s ease",
-};
-
-const sectionContainerStyle = {
-  display: "flex",
-  justifyContent: "space-between",
-  width: "80%",
-  marginTop: "-130px",
-  zIndex: "3",
-  marginLeft: "120px",
-  boxShadow: "0px 0px 500px rgba(0, 0, 0, 0.5)",
-  backgroundColor: "#F7F7F7",
-};
 
 const imgStyle = {
   width: "70%",
@@ -81,21 +63,21 @@ const footerStyle = {
   color: "#fff",
 };
 
+
+
 const LandingPage = () => {
 
   const [isHovered, setIsHovered] = useState(false);
   const [isSecHovered, setIsSecHovered] = useState(false);
 
+
+
   return (
     <div>
       <div style={landingPageStyle}>
         <div>
-          <img
-            style={{
-              width: "20vw",
-              height: "40vh",
-              transform: "rotate(10deg)",
-            }}
+          <img className="firstpage_pipClogo"
+            alt=""
             src={PipCImage}
           />
         </div>
@@ -115,7 +97,7 @@ const LandingPage = () => {
               >
                 Unlock the World of Coding Excellence:{" "}
               </span>
-              <spin
+              <span
                 style={{
                   fontSize: "25px",
                   fontFamily: "Cedarville Cursive",
@@ -125,12 +107,12 @@ const LandingPage = () => {
                 }}
               >
                 Learn, Build, and Master Programming
-              </spin>{" "}
+              </span>
             </p>
           </section>
         </div>
       </div>
-      <div style={sectionContainerStyle}>
+      <div className="sectionContainerStyle">
         <div style={sectionStyle}>
           <Stack direction="row" spacing={2}>
             <DemoPaper variant="">
@@ -164,7 +146,7 @@ const LandingPage = () => {
         <div style={sectionStyle}>
           <img
             src={SecondSectionImage}
-            alt="Additional Section Image"
+            alt=""
             style={{
               ...imgStyle,
               transform: isHovered ? "rotate(0deg)" : imgStyle.transform,
@@ -183,6 +165,7 @@ const LandingPage = () => {
               transition: "transform 0.3s ease",
               transform: isSecHovered ? "rotate(0deg)" : "rotate(10deg)",
             }}
+            alt=""
             src={QuoteImage}
             onMouseOver={() => setIsSecHovered(true)}
             onMouseOut={() => setIsSecHovered(false)}
@@ -192,6 +175,12 @@ const LandingPage = () => {
       <div>
         <SimpleContainer />
       </div>
+      <Stack className="courseList_div">
+        <CourseList />
+      </Stack>
+      <Stack>
+        <ContactUs />
+      </Stack>
       <footer style={footerStyle}>
         <p>&copy; 2023 My Coding Website. All rights reserved.</p>
       </footer>

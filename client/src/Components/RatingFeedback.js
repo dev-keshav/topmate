@@ -7,7 +7,7 @@ import emo from "../Photo/emogy.png";
 import CardActions from "@mui/material/CardActions";
 import { Stack } from "@mui/material";
 
-export default function BasicCard() {
+export default function RatingFeedback() {
   const [feedbackData, setfeedbackData] = React.useState([]);
 
   React.useEffect(() => {

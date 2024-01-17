@@ -55,8 +55,10 @@ export default function SimpleContainer() {
             sx={{
               ...containerStyle,
               bgcolor: "#B4B0D8",
-              height: "28vh",
+              height: "100%",
               width: "100%", // Full width on small screens
+              border: 'dashed',
+              paddingBottom: 2
             }}
           >
             <div style={{ marginLeft: "40px", marginRight: "40px" }}>
@@ -78,8 +80,10 @@ export default function SimpleContainer() {
             sx={{
               ...containerStyle,
               bgcolor: "#DAB5D5",
-              height: "26vh",
+              height: "100%",
               width: "100%", // Full width on small screens
+              border: 'dashed',
+              paddingBottom: 2
             }}
           >
             <div style={{ marginLeft: "40px", marginRight: "40px" }}>
@@ -101,8 +105,10 @@ export default function SimpleContainer() {
             sx={{
               ...containerStyle,
               bgcolor: "#FBCFD0",
-              height: "26vh",
+              height: "100%",
               width: "100%", // Full width on small screens
+              border: 'dashed',
+              paddingBottom: 2
             }}
           >
             <div style={{ marginLeft: "40px", marginRight: "40px" }}>
@@ -124,8 +130,10 @@ export default function SimpleContainer() {
             sx={{
               ...containerStyle,
               bgcolor: "#82ddd7",
-              height: "26vh",
+              height: "100%",
               width: "100%", // Full width on small screens
+              border: 'dashed',
+              paddingBottom: 2
             }}
           >
             <div style={{ marginLeft: "40px", marginRight: "40px" }}>
