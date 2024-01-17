@@ -1,15 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
-import All from "./Components/All";
-import Option from "./Components/Option";
-import Sidebar from "./Sidebar";
-import { Stack } from "@mui/material";
-import OneCall from "./Pages/OneCall";
-import Priority from "./Pages/Priority";
 import NestedModal from "./Components/NestedModal";
-import SidebarSmall from "./Components/SidebarSmall";
-import AboutMe from "./Components/AboutMe";
-import RatingFeedback from "./Components/RatingFeedback";
 import Firstpage from "./Pages/Firstpage";
 import Page404 from "./Pages/Page404";
 import DevKeshav from "./Pages/DevKeshav";

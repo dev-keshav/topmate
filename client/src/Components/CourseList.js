@@ -8,7 +8,7 @@ function CourseList() {
   const [showMoreButton, setShowMoreButton] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:3001/v1/api/contentBoxData")
+    fetch("https://pipc.onrender.com/v1/api/contentBoxData")
       .then((response) => response.json())
       .then((data) => {
         console.log("Data from API:", data);

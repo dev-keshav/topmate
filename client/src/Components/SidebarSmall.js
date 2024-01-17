@@ -18,7 +18,7 @@ const Sidebar = () => {
   const [profileData, setProfileData] = useState();
 
   useEffect(() => {
-    fetch("http://localhost:3001/v1/api/profileData")
+    fetch("https://pipc.onrender.com/v1/api/profileData")
     .then((response) => response.json())
     .then((data) => setProfileData(data))
     .catch((error) => console.log("Error fetching data:", error))

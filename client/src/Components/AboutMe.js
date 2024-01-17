@@ -8,7 +8,7 @@ function AboutMe() {
   const [listData, setlistData] = React.useState([]);
 
   React.useEffect(() => {
-    fetch("http://localhost:3001/v1/api/profileListData")
+    fetch("https://pipc.onrender.com/v1/api/profileListData")
       .then((response) => response.json())
       .then((data) => setlistData(data))
       .catch((error) => console.error("Error fetching data:", error));

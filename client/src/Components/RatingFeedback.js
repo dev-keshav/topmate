@@ -11,7 +11,7 @@ export default function RatingFeedback() {
   const [feedbackData, setfeedbackData] = React.useState([]);
 
   React.useEffect(() => {
-    fetch("http://localhost:3001/v1/api/feedbackData")
+    fetch("https://pipc.onrender.com/v1/api/feedbackData")
     .then((response) => response.json())
     .then((data) => setfeedbackData(data))
     .catch((error) => console.error("Error fetching data:", error))

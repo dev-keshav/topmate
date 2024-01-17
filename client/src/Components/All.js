@@ -7,7 +7,7 @@ function All() {
 
   useEffect(() => {
     // Fetch data from the API endpoint
-    fetch("http://localhost:3001/v1/api/basicCards")
+    fetch("https://pipc.onrender.com/v1/api/basicCards")
       .then((response) => response.json())
       .then((data) => {
         // console.log(data)
