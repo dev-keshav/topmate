@@ -65,7 +65,6 @@ export default function BasicCard(props) {
     setUserData((prevData) => ({ ...prevData, time: date }));
   };
 
-
   // Firebase database
   const [userData, setUserData] = useState({
     name: props.name,

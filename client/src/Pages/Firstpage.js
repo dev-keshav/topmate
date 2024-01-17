@@ -76,13 +76,7 @@ const LandingPage = () => {
     <div>
       <div style={landingPageStyle}>
         <div>
-          <img
-            style={{
-              width: "20vw",
-              height: "40vh",
-              transform: "rotate(10deg)",
-              
-            }}
+          <img className="firstpage_pipClogo"
             alt=""
             src={PipCImage}
           />
